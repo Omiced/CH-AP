@@ -1,0 +1,26 @@
+thead, tfoot{
+  background-color: #2c5e77;
+  color: white;
+}
+
+tbody > tr:nth-child(even){
+  background-color: #168abb;
+}
+
+table{
+  border: 2px solid black;
+  border-collapse:collapse;
+}
+
+th{
+  border: 2px solid red;
+}
+
+td{
+  border: 2px solid red;
+  width: 100px;
+}
+
+caption{
+  caption-side: bottom;
+}

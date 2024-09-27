@@ -1,0 +1,22 @@
+label {
+  display: block;
+  margin-top: 1em;
+}
+/* 
+input{
+  display: block;
+  width: 500px;
+} */
+
+input#text{
+  background-color: white;
+  border-radius: 10px 5px 10px 5px ;
+}
+#text:invalid{
+  background-color: red;
+  border: 5px solid green;
+}
+
+#text:valid{
+  background-color: green;
+}

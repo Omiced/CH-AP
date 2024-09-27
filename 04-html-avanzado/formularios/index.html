@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+    <form action="#">
+      <input  minlength="" required type="text" pattern=".{3,16}"  placeholder="Aqui va tu nombre" id="text" >
+      <label for="text">Cuadro de texto</label>
+        
+        <fieldset>
+          <legend>Selecciona tu animal favorito</legend>
+          <label for="checkbox2">capi</label>
+          <!-- Puedes Seleccionar varios -->
+          <input type="checkbox" name="checkbox" id="checkbox" value="capi" >
+          <label for="">Perro</label>
+          <input type="checkbox" name="checkbox" id="checkbox1" value="perro">
+          <label for="">Wombat</label>
+          <input type="checkbox" name="checkbox" id="" value="wombat">
+        </fieldset>
+      <fieldset>
+        <legend>Escoge una opcín de comida</legend>
+        <!-- Solo puedes seleccionar uno -->
+        <label for="radio-pechuga">          
+          Pechuga
+        </label>
+        <input type="radio" name="radio" id="radio-pechuga" value="Pechuga">
+        <label for="radio-bistec">Bistec</label>
+        <input type="radio" name="radio" id="radio-bistec" value="Bistec">
+        <label for="radio-ensalada">Ensalada</label>
+        <input type="radio" name="radio" id="radio-ensalada" >
+        <label for="radio-pizza">Pizza</label>
+        <input type="radio" name="radio" id="radio-pizza">
+      </fieldset>
+      <br>
+      
+      <label for="email">Email</label>
+      <input  type="email" name="email" required placeholder="correo@algo.com " id="email">
+      <br>
+      <br>
+      <label for="edad">Email</label>
+      <input type="number" name="edad"  id="edad" min="18" max="99" placeholder="edad">
+      <br>
+      <br>
+      <label for="password">Password</label>
+      <br>
+      <input type="password" name="" id="password">
+      <br>
+      <button type="submit">Enviar</button>
+      <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+#lorem{
+  color: green !important;
+}
+
+.title{
+  color: blue;
+}
+
+p{
+  color:red;
+}
+
+#lorem.title{
+  color: red;
+} 
+
