@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding:0 ;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100dvh;
+}
+
+img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit:cover;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+  border: 5px solid red;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(100px, 1fr) );
+  /* grid-template-rows:2fr 1fr 3fr ; */
+  width: 50%;
+  gap: 10px;
+  margin: 100px auto;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+h1{
+  text-align: center;
+}
+
+img:hover{
+  transform: scale(2);
+  object-fit: contain;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}

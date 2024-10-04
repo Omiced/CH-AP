@@ -1,0 +1,15 @@
+ .btn-primary{
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+}
+
+.btn-primary:hover{
+  background-color: green;
+} 
+
+#prueba{
+  width: 100px;
+  aspect-ratio: 1;
+  background-color: red;
+}

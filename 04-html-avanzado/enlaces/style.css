@@ -21,7 +21,12 @@ a{
 header{
   border-bottom: 2px solid black;
   padding: 20px;
-}
+  position:sticky;
+  top : 0;
+  background-color: rgb(95, 158, 160, 1);
+  /* si usamos fixed hay que poner el width para que abarque todo de nuevo */
+  width: 100dvw;
+} 
 
 main{
   padding: 20px;
@@ -39,4 +44,11 @@ a:hover{
 p{
   text-align: justify;
 }
+/* Poner un margen si estamos usando fixed para que nuestro elemento quede en vista sin ser tapado */
+/* #section-1{
+  margin-top: 50px;
+} */
 
+h2{
+  margin-bottom: 20px;
+}
