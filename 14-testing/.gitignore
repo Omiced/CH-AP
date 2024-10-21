@@ -1,0 +1,27 @@
+# Logs archivos de rastreo de nuestro programa
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# se generan con npm install y no es necesario guardarlos en github o hacer seguimiento con git
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files for configuration
+.vscode/*
+!.vscode/extensions.json
+#editores jetbrains
+.idea
+#usuarios de mac
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
