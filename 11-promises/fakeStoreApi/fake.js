@@ -41,8 +41,9 @@ async function getAllProducts(){
   if(localStorage.getItem("products")) return;
   try {
     const response = await fetch(URL_BASE);
+    console.log(response);
     if(!response) throw new Error("Error al obtener los productos");
-    const data = await response.json();
+	  const data = await response.json();
     // fijamos la data en el localstorage con la llave de products
     localStorage.setItem("products",JSON.stringify(data));
     //si retornamos algo dentro de una función async, siempre va a retornar como promesa
@@ -73,15 +74,44 @@ const addProduct = async (productObject) =>{
   console.log(data);
 }
 
+// updateProduct
+const updateProduct = async (id, productObject) => {
+  try {
+    const response = await fetch(`${URL_BASE}/${id}`,{
+      method:"PATCH",
+      headers: {'Content-Type': 'application/json',},
+      body: JSON.stringify(productObject)
+    });
+    if(!response) throw new Error("Producto no actualizado");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Error", error);
+  }
+}
+
+
+
 getAllProducts();
 getSingleProduct(18);
-addProduct(  {
+addProduct({
   title: 'test product',
   price: 13.5,
   description: 'lorem ipsum set',
   image: 'https://i.pravatar.cc',
   category: 'electronic'
 });
+const updatedProduct =  {
+  title: 'test product',
+  price: 13.5,
+  description: 'lorem ipsum set',
+  image: 'https://i.pravatar.cc',
+  category: 'electronic'
+};
+
+
+updateProduct(290, updatedProduct);
+
 
 showAllProducts(getAllProducts());
 

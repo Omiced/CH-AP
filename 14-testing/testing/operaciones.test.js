@@ -1,4 +1,4 @@
-const {add,substract,multiply,divide} = require("../operaciones");
+const {add,substract,multiply,divide, residuo} = require("../operaciones");
 
 describe("probando la función add", () => {
   test("probando que la suma de 2 + 2 = 4", () => {
@@ -57,3 +57,24 @@ test("probando 2 * 128 = 256", () => {
   expect(multiply(2,128)).toBe(256)
 })
 
+
+describe("Probando función de resiudo", () => {
+  test("probando que un número par % 2 sea == 0", () => {
+    expect(residuo(4,2)).toBe(0);
+  });
+  test("probando que un número impar % 2 sea !== 0", () => {
+    expect(residuo(17,2)).toBeGreaterThan(0);
+  });
+  test("probando que un número impar % 2 sea !== 0", () => {
+    expect(residuo(33,2)).toBeGreaterThan(0);
+  });
+  test("probando si un número termina en 0, n % 10 === 0", () => {
+    expect(residuo(32480,10)).toBe(0);
+  });
+  test("probando si con un argumento tipo string nos da false", () => {
+    expect(residuo("hola", 3)).toBeFalsy();
+  });
+  test("probando que si el divisor es 0 retorne undefined", () => {
+    expect(residuo(2,0)).toBeUndefined();
+  })
+})

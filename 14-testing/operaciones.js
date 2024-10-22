@@ -18,9 +18,16 @@ const divide = (a,b) => {
   return;
 };
 
+function residuo(a,b){ 
+ if(b === 0) return; 
+ return  a %b
+};
+
+
 module.exports = {
   add,
   substract,
   multiply,
   divide,
+  residuo
 };
