@@ -53,7 +53,6 @@ function App() {
       <RecipeReviewCard />
     </div>
 
-
     {/* Comentario dentro de la función
     <Button text="Registrarse" />
     <br />
