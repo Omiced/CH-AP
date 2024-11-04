@@ -22,7 +22,7 @@ const Navbar = () => {
             <div className='navbar--menu'>
                 <div className='menu--links'>
                     <Link to='/astros-api'>
-                        <a>Astros</a>
+                        <span>Astros</span>
                     </Link>
                     <a href='#'>Nasa</a>
                     <a href='#'>ISS</a>
