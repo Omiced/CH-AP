@@ -1,6 +1,7 @@
 package org.generation.hashSetCollection;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.TreeSet;
 
@@ -33,6 +34,10 @@ public class HashSetCollection {
 		ejemploSet.addAll(Arrays.asList(12, 136, 144, 98, 12));
 		
 		System.out.println(ejemploSet);
+		
+		
+		TreeSet<Integer> numeros = new TreeSet<>(); // Usa el orden natural (ascendente)
+		TreeSet<String> palabras = new TreeSet<>(Comparator.reverseOrder()); // Orden inverso, ya que se implemente la interface Comparator y el método reverseOrder()
 		
 	}
 }

@@ -29,6 +29,13 @@ public class HashMapCollection {
 			System.out.println("Matricula: " + matricula + ", Estudiante: " + nombreEstudiante);
 		}
 		
+		// Para recuperar el valor a partir de una clave (key) usamos el método .get(key), que permite buscar la clave en el HashMap y devuelve el valor asociado a esa clave.
+		Long matricula = 2024110604L;
+		String nombreEstudiante = estudiantes.get(matricula);
+		
+		System.out.println("Estudiante con matricula " + matricula + ": " + nombreEstudiante);
+		
+		
 		// --- TreeMap. Utiliza pares de llave/valor, se encuentra ordenado de manera ascendente (Según tabla ASCII) y no permite duplicados
 		TreeMap<String, String> ejemploTreeMap = new TreeMap<>();
 		ejemploTreeMap.put("Daniel", "Maldonado");
@@ -39,6 +46,8 @@ public class HashMapCollection {
 		
 		System.out.println(ejemploTreeMap);
 
+
+		
 	}
 
 }
