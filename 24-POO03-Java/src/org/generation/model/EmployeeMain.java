@@ -20,7 +20,7 @@ public class EmployeeMain {
 		
 		// Instanciando un objeto de tipo Employee a partir de la interface EmployeeRepository implementada en la clase Employee
 		EmployeeRepository karla = new Employee(20231004L, "Karla Espinoza", 18336.11f);
-		
+		System.out.println(karla);
 	}
 
 }

@@ -3,7 +3,8 @@ package org.generation.service;
 import org.generation.model.Employee;
 
 // Vive la lógica de mi modelo
-public class EmployeeService {
+// Al implementar la interface, la clase se convierte en una clase abstracta
+public class EmployeeService{
 	
 	// Método para mostrar una acción
 	public void trabajar(Employee empleado) {
