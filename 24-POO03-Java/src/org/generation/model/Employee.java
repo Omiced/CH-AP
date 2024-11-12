@@ -1,6 +1,8 @@
 package org.generation.model;
 
-public class Employee {
+import org.generation.repository.EmployeeRepository;
+
+public class Employee implements EmployeeRepository{
 
 	// Variables de instancia
 	Long numEmpleado;
