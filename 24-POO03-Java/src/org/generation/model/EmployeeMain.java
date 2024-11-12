@@ -1,5 +1,6 @@
 package org.generation.model;
 
+import org.generation.repository.EmployeeRepository;
 import org.generation.service.EmployeeService;
 
 public class EmployeeMain {
@@ -16,7 +17,10 @@ public class EmployeeMain {
 		employeeService.calcularSalario(gabriel);
 		employeeService.trabajar(romina);
 		employeeService.infoGeneral(gabriel);
-
+		
+		// Instanciando un objeto de tipo Employee a partir de la interface EmployeeRepository implementada en la clase Employee
+		EmployeeRepository karla = new Employee(20231004L, "Karla Espinoza", 18336.11f);
+		
 	}
 
 }
