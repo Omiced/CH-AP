@@ -1,0 +1,16 @@
+spring:
+ application:
+  name: pandevs
+  
+ datasource:
+  url: jdbc:mysql://localhost:3306/pandevs_ap?createDatabaseIfNotExist=true
+  username: root
+  password: 
+  
+ jpa:
+  hibernate:
+   ddl-auto: update
+  show-sql: true
+  properties:
+   hibernate:
+    format_sql: true
