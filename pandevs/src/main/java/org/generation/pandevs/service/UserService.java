@@ -1,12 +1,15 @@
 package org.generation.pandevs.service;
 
 import java.util.List;
+// import java.util.Optional;
 
 import org.generation.pandevs.exceptions.UserNotFoundException;
 import org.generation.pandevs.model.UserEntity;
 import org.generation.pandevs.repository.UserRepository;
+import org.generation.pandevs.service.dto.UpdatePasswordUserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
@@ -49,6 +52,49 @@ public class UserService {
 	public UserEntity getByEmail(String email) {
 		return this.userRepository.getByEmail(email);
 	}
+	
+	// PUT -> Actualizando toda la entidad (Entity)
+	public UserEntity updateUser(UserEntity user, Long id) {
+		return userRepository.findById(id)
+				.map(userMap -> {
+					userMap.setUsername(user.getUsername());
+					userMap.setEmail(user.getEmail());
+					userMap.setPassword(user.getPassword());
+				return userRepository.save(userMap);
+		})
+			.orElseThrow(() -> new UserNotFoundException(id));
+	}
+	
+	// Método de tipo Optional 
+	/*public Optional<Object> updateUser(UserEntity user, Long id) {
+		return userRepository.findById(id).map(userMap -> {
+			userMap.setUsername(user.getUsername());
+			userMap.setEmail(user.getEmail());
+			userMap.setPassword(user.getPassword());
+			return userRepository.save(userMap);
+		});
+		//.orElseThrow(() -> new UserNotFoundException(id));
+	}*/
+	
+	
+	// PATCH -> Actualizando algunos campos (Data Transfer Object DTO)
+	// Crear dentro de service un package dto -> UpdatePasswordUserDto.java
+	// Las clases DTO me permiten exponer información (atributos y métodos) parciales de la Entity y de esta manera evitar trabajar con todos los atributos y métodos de la Entity
+	// @Transactional anota este método como método de Transacción (ejecución de acciones) entre diferentes clases
+	@Transactional
+	public void updatePassword(UpdatePasswordUserDto dto) {
+		if (!this.userRepository.existsById(dto.getIdUser())) {
+			throw new UserNotFoundException(dto.getIdUser());
+		}
+		this.userRepository.updatePassword(dto.getIdUser(), dto.getPassword());
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -1,5 +1,6 @@
 package org.generation.pandevs.model;
 
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -7,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /*
@@ -46,12 +48,13 @@ public class UserEntity {
 	public UserEntity() {
 		
 	}
-	
-	public UserEntity(Long idUser, String username, String email, String password) {
+
+	public UserEntity(Long idUser, String username, String email, String password, List<OrderEntity> orders) {
 		this.idUser = idUser;
 		this.username = username;
 		this.email = email;
 		this.password = password;
+		this.orders = orders;
 	}
 
 	public Long getIdUser() {
@@ -89,13 +92,13 @@ public class UserEntity {
 	@Override
 	public String toString() {
 		return "UserEntity [idUser=" + idUser + ", username=" + username + ", email=" + email + ", password=" + password
-				+ "]";
+				+ ", orders=" + orders + "]";
 	}
 
 	// Métodos hashCode() y equals(). Importantes para tener un mayor control al realizar la creación de entidades
 	@Override
 	public int hashCode() {
-		return Objects.hash(email, idUser, password, username);
+		return Objects.hash(email, idUser, orders, password, username);
 	}
 
 	@Override
@@ -108,8 +111,45 @@ public class UserEntity {
 			return false;
 		UserEntity other = (UserEntity) obj;
 		return Objects.equals(email, other.email) && Objects.equals(idUser, other.idUser)
-				&& Objects.equals(password, other.password) && Objects.equals(username, other.username);
+				&& Objects.equals(orders, other.orders) && Objects.equals(password, other.password)
+				&& Objects.equals(username, other.username);
 	}
+	
+	
+	//----------------------------------------------
+	// Relación de User con Order 1:N
+	//----------------------------------------------
+	
+	@OneToMany(mappedBy = "user")
+	private List<OrderEntity> orders;
+	
+	// Getters y Setters de la Relación entre Entidades
+	public List<OrderEntity> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<OrderEntity> orders) {
+		this.orders = orders;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
