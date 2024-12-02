@@ -5,7 +5,7 @@ spring:
  datasource:
   url: jdbc:mysql://localhost:3306/pandevs_ap?createDatabaseIfNotExist=true
   username: root
-  password: 
+  password: dani1986
   
  jpa:
   hibernate:
