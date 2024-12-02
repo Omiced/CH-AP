@@ -3,6 +3,8 @@ package org.generation.pandevs.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -97,6 +99,7 @@ public class OrderEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "id_user", referencedColumnName = "id_user")
+	@JsonIgnore // Evita la Serialización que mostraba una recursión de la data, es decir, que se mandaba a llamar a sí misma una y otra vez
 	private UserEntity user;
 
 	// Getters y Setters de la Relación entre Entidades
